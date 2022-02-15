@@ -1,0 +1,7 @@
+version '3.8'
+
+services:
+  dashboard:
+    image: http-server
+    build:
+      context: ./dashboard
