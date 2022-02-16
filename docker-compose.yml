@@ -1,9 +1,13 @@
 version: "3.8"
 
 services:
-  dashboard:
-    image: nginx-dashboard
+  frontend:
     build:
       context: ./dashboard
     ports:
       - "80:80"
+  backend:
+    build:
+      context: ./sse
+    ports:
+      - "9000:9000"
