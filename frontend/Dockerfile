@@ -1,9 +1,9 @@
 FROM node:lts-alpine as build
 
-WORKDIR /dashboard
+WORKDIR /frontend
 
-COPY ./package.json /dashboard/package.json
-COPY ./package-lock.json /dashboard/package-lock.json
+COPY ./package.json /frontend/package.json
+COPY ./package-lock.json /frontend/package-lock.json
 
 RUN npm install
 COPY . .
@@ -12,4 +12,4 @@ RUN npm run build
 FROM nginx:stable-alpine
 
 COPY ./nginx/nginx.conf /ect/nginx/conf.d/default.conf
-COPY --from=build /dashboard/build /usr/share/nginx/html
+COPY --from=build /frontend/build /usr/share/nginx/html

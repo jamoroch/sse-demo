@@ -1,7 +1,7 @@
 FROM gradle:7-jdk11-alpine
 
-WORKDIR /app
+WORKDIR /backend
 
-COPY src/ /app/src
-COPY build.gradle /app/build.gradle
+COPY src/ /backend/src
+COPY build.gradle /backend/build.gradle
 CMD gradle bootRun
