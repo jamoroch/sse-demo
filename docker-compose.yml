@@ -1,7 +1,9 @@
-version '3.8'
+version: "3.8"
 
 services:
   dashboard:
-    image: http-server
+    image: nginx-dashboard
     build:
       context: ./dashboard
+    ports:
+      - "80:80"
