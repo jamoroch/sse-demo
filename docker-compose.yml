@@ -3,11 +3,11 @@ version: "3.8"
 services:
   frontend:
     build:
-      context: ./dashboard
+      context: ./frontend
     ports:
       - "80:80"
   backend:
     build:
-      context: ./sse
+      context: ./backend
     ports:
       - "9000:9000"
